@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	response.sendRedirect("./Main.us");
-	%>
+	<h1>main.jsp</h1>
 </body>
 </html>
