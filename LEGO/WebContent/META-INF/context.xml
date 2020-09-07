@@ -6,7 +6,7 @@
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="com.mysql.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/lego"
+		url="jdbc:mysql://34.64.190.34:3306/lego"
 		username="men"
 		password="legomen"
 		maxActive="500"

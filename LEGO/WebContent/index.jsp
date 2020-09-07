@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	response.sendRedirect("./Main.us");
-	%>
+		<%
+			response.sendRedirect("./Main.us");
+			//response.sendRedirect("./UserJoin.us");
+		%>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>model2</display-name>
+  <display-name>LEGO</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -10,7 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  <!-- MVC 주소 매핑 -->
+
   
   <!-- DB 연결 정보 설정 -->
   <resource-ref>
@@ -20,13 +20,23 @@
   	<res-auth>Container</res-auth>
   </resource-ref>
   
-  <!-- 회원 -->
+  <!-- MVC 주소 매핑 -->
+  <!-- 회원 관리 -->
   <servlet>
-  	<servlet-name>AdminGoodsFrontController</servlet-name>
-  	<servlet-class>net.admin.goods.action.AdminGoodsFrontController</servlet-class>
+  	<servlet-name>UserFrontController</servlet-name>
+  	<servlet-class>net.user.action.UserFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>AdminGoodsFrontController</servlet-name>
-  	<url-pattern>*.ag</url-pattern>
+  	<servlet-name>UserFrontController</servlet-name>
+  	<url-pattern>*.us</url-pattern>
   </servlet-mapping>
+  
+  <!-- 상품 관리 -->
+  
+  <!-- 장바구니 관리 -->
+  
+  <!-- 주문 관리 -->
+  
+  
 </web-app>
+

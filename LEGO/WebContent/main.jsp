@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>main.jsp</h1>
+	<a href="./UserJoin.us">회원가입</a>
 </body>
 </html>
