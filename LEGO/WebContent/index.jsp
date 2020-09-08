@@ -11,6 +11,5 @@
 			response.sendRedirect("./Main.us");
 			//response.sendRedirect("./UserJoin.us");
 		%>
-
 </body>
 </html>
