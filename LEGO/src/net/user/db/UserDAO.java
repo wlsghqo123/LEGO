@@ -28,7 +28,7 @@ public class UserDAO {
 	//getConn() - DB 연결 메서드
 	private Connection getConn() throws Exception{
 		Context init = new InitialContext();
-		DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/legomen");
+		DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/lego");
 		con = ds.getConnection();
 		System.out.println("DB 연결 & 드라이버 로드 성공 : "+con);
 		return con;
@@ -49,7 +49,34 @@ public class UserDAO {
 	}
 	
 	//addUser() - 회원 가입 메서드
-	
+	public void addUser(UserDTO udto){
+		System.out.println("UserDAO - addUser() 호출");
+			
+			try{
+			sql = "insert into user values(null,?,?,?,?,?,?,?,?,?,?,?,now())";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, udto.getUser_id());
+			pstmt.setString(2, udto.getUser_pw());
+			pstmt.setString(3, udto.getUser_name());
+			pstmt.setString(4, udto.getUser_email());
+			pstmt.setString(5, udto.getUser_phone());
+			pstmt.setString(6, udto.getUser_birth());
+			pstmt.setInt(7, udto.getPostcode());
+			pstmt.setString(8,udto.getRoad_name_addr());
+			pstmt.setString(9, udto.getA_lot_number_addr());
+			pstmt.setString(10, udto.getDetail_addr());
+			pstmt.setString(11, udto.getEtc_addr());
+			pstmt.executeUpdate();
+			
+			System.out.println("회원 가입 성공!");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally{
+			closeDB();
+		}
+		
+	}
 	//deleteUser() - 회원 탈퇴 메서드
 	
 	//modifyUser() - 회원 정보 수정 메서드

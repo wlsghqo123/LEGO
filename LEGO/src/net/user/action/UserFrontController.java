@@ -35,11 +35,37 @@ public class UserFrontController extends HttpServlet{
 						System.out.println("--!페이지 구분(View/Model) 시작!--");
 						
 						//페이지 이동 정보 저장 객체
+						Action action = null;
 						ActionForward forward = null;
 						
 						//처리 페이지에 대한 정보 객체(인터페이스 - execute())
-						Action action = null;
 						
+						if(command.equals("/Main.us")){
+							//메인페이지
+							//./main.jsp 으로 이동
+							System.out.println("/Main.us 주소 요청");
+							
+							forward = new ActionForward();
+							forward.setPath("./main.jsp");
+							forward.setRedirect(false);
+						}else if(command.equals("/UserJoin.us")){
+							//회원가입페이지
+							//./user/join.jsp 으로 이동
+							System.out.println("/UserJoin.us 주소 요청");
+							forward = new ActionForward();
+							forward.setPath("./user/join.jsp");
+							forward.setRedirect(false);
+						}else if(command.equals("/UserJoinAction.us")){
+							//회원가입 처리페이지(Model)
+							System.out.println("/UserJoinAction.us 주소 요청");
+							action = new UserJoinAction();
+							try {
+								forward = action.execute(request, response);
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
 						System.out.println("--!페이지 구분(View/Model) 완료!--");
 					//--------------------------------------------------------------------------------------------------------------------------------------//
 				// 3.실제 페이지 이동 동작
