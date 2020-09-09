@@ -37,32 +37,5 @@
 			</ul>
 		</div>
 	</header>
-		<div id="banner_small"></div>
-		<div id="banner_main"></div>
-		<div id="categories"></div>
-		<div id="ads">
-			<div id="ad_left"></div>
-			<div id="ad_right"></div>
-		</div>
-		<div id="sub_ads"></div>
-		<div id="featured_sets">
-			<div id="feature_1"></div>
-			<div id="feature_2"></div>
-			<div id="feature_3"></div>
-			<div id="feature_4"></div>
-		</div>
-		<div id="spotlight">
-			<div id="spot_left"></div>
-			<div id="spot_right"></div>
-		</div>
-		<div id="magazine"></div>
-		<div id="contact"></div>
-		<div id="guarantee"></div>
-		<div id="subscribe"></div>
-		<div id="social"></div>
-		<div id="aboutUs"></div>
-		<footer>
-			<div></div>
-		</footer>
 </body>
 </html>
