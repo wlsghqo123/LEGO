@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+body{
+	background-color: lightblue;
+}
+#header_container{
+	background-color: white;
+	display: block;
+	overflow: auto;
+}
+#header_left{
+	float: left;
+}
+#header_left li{
+	display: inline;
+}
+#header_right{
+	float: right;
+}
+#header_right li{
+	display: inline;	
+}
+#navigation{
+	background-color: yellow;
+	clear: both;
+	overflow: auto;
+}
+#navigation li{
+	display: inline;
+}
