@@ -65,6 +65,23 @@ public class UserFrontController extends HttpServlet{
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
+						}else if(command.equals("/UserLogin.us")){
+							//로그인 페이지
+							//./user/login.jsp
+							System.out.println("/UserLogin.us 주소 요청");
+							forward = new ActionForward();
+							forward.setPath("./user/login.jsp");
+							forward.setRedirect(false);
+						}else if(command.equals("/UserLoginAction.us")){
+							//로그인 처리(Model)
+							System.out.println("/UserLoginAction.us 주소 요청");
+							action = new UserLoginAction();
+							try {
+								forward = action.execute(request, response);
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						}
 						System.out.println("--!페이지 구분(View/Model) 완료!--");
 					//--------------------------------------------------------------------------------------------------------------------------------------//

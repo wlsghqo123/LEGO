@@ -82,6 +82,34 @@ public class UserDAO {
 	//modifyUser() - 회원 정보 수정 메서드
 	
 	//loginUser() - 로그인 메서드
+	public int loginUser(String id,String pw){
+		int result = -1; //1 : 로그인 성공 / 0 : 아이디 없음 / -1 : 비밀번호 틀림 
+		System.out.println("dao id : "+id+" dao pw : "+pw);
+		try {
+			sql = "select user_pw from user where user_id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				//패스워드 존재 : 아이디 있음
+				if(pw.equals(rs.getString("user_pw"))){
+					//비밀번호 일치
+					result = 1;
+				}else{
+					//비밀번호 틀림
+					result = -1;
+				}
+			}else{
+				//패스워드 없음 : 아이디 없음
+				result = 0;
+			}
+			System.out.println("아이디 비밀번호 체크(1:로그인성공/-1:비밀번호틀림/0:아이디없음) : "+result);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	//getUser() - 회원정보 조회 메서드
 	
